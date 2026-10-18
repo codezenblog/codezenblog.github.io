@@ -24,6 +24,8 @@ Write the post here in **Markdown**.
 
 Commit it, and the site rebuilds in about a minute.
 
+**For Google:** always fill in `title` and `description`. They become the headline and snippet in search results and in link previews on Instagram, WhatsApp, LinkedIn and others. Each new post is added to `sitemap.xml` automatically.
+
 **From your phone or browser:** open the repo on github.com, go to `_posts`, then **Add file → Create new file**, paste the template, and commit.
 
 **From your computer:**

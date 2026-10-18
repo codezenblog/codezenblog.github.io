@@ -1,0 +1,10 @@
+<section class="reach" aria-labelledby="reach-title">
+  <p class="label">Reach out</p>
+  <h2 id="reach-title">{{ include.heading | default: "Want to collab or just say hi?" }}</h2>
+  <p class="muted">I read every message. DMs on Instagram get the fastest reply.</p>
+  <ul class="reach-links">
+    {% for c in site.contact %}
+      <li><a href="{{ c.url }}" rel="me noopener" target="_blank"><span>{{ c.label }}</span><span class="muted">{{ c.handle }}</span><span aria-hidden="true">↗</span></a></li>
+    {% endfor %}
+  </ul>
+</section>

@@ -6,8 +6,12 @@
   {% seo %}
   {% feed_meta %}
   <meta name="theme-color" content="#f2f0eb">
-  <link rel="icon" href="https://codezenregmi.github.io/favicon.ico" sizes="48x48">
-  <link rel="apple-touch-icon" href="https://codezenregmi.github.io/apple-touch-icon.png">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ '/favicon-96x96.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ '/favicon-192x192.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  {% for link in site.social.links %}<link rel="me" href="{{ link }}">
+  {% endfor %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,10 +21,10 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="nav wrap">
     <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    <nav>
-      <a class="u-link" href="{{ '/' | relative_url }}">All posts</a>
-      <a class="u-link" href="{{ site.social.portfolio }}">Portfolio</a>
-      <a class="u-link" href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    <nav aria-label="Main">
+      <a class="u-link" href="{{ '/' | relative_url }}">Posts</a>
+      <a class="u-link" href="{{ '/about/' | relative_url }}">About</a>
+      <a class="u-link" href="{{ site.portfolio }}">Portfolio</a>
     </nav>
   </header>
 
@@ -29,8 +33,11 @@
   </main>
 
   <footer class="footer wrap">
-    <span>© {{ site.time | date: '%Y' }} {{ site.author }}</span>
-    <span class="muted">Written in Kathmandu</span>
+    <span>© {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
+    <span class="muted">
+      {% for c in site.contact %}<a class="u-link" href="{{ c.url }}" rel="me noopener">{{ c.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
+      · <a class="u-link" href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </span>
   </footer>
 </body>
 </html>

@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "{{ page.url | absolute_url }}",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Codezen Regmi",
+    "alternateName": ["Pranjal Regmi", "codezenregmi"],
+    "url": "{{ page.url | absolute_url }}",
+    "image": "{{ '/assets/images/og-image.jpg' | absolute_url }}",
+    "jobTitle": "Entrepreneur",
+    "description": {{ page.description | jsonify }},
+    "homeLocation": { "@type": "Place", "name": "Kathmandu, Nepal" },
+    "knowsAbout": ["Artificial intelligence", "Entrepreneurship", "Startups", "Creator economy"],
+    "founder": [
+      { "@type": "Organization", "name": "Creovel", "url": "https://creovel.com" },
+      { "@type": "Organization", "name": "Meme Survival", "url": "https://www.memesurvival.com/" }
+    ],
+    "sameAs": {{ site.social.links | jsonify }}
+  }
+}
+</script>
+<article class="post wrap">
+  <header class="about-head">
+    <img class="about-photo" src="{{ '/assets/images/portrait.webp' | relative_url }}" alt="Codezen Regmi" width="160" height="160">
+    <div>
+      <p class="label">About</p>
+      <h1>Codezen Regmi</h1>
+      <p class="lede">AI entrepreneur · Founder of Creovel · Kathmandu, Nepal</p>
+    </div>
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {% include reach-out.html heading="Let's talk." %}
+</article>

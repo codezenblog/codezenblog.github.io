@@ -7,9 +7,9 @@
   </div>
 {% elsif item.video %}
   <div class="media">
-    <video src="{{ item.video | relative_url }}" controls preload="metadata"{% if item.image %} poster="{{ item.image | relative_url }}"{% endif %}></video>
+    <video src="{{ item.video | relative_url }}" controls preload="metadata"{% if item.image and item.image != site.image %} poster="{{ item.image | relative_url }}"{% endif %}></video>
   </div>
-{% elsif item.image %}
+{% elsif item.image and item.image != site.image %}
   <div class="media media--image">
     <img src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}">
   </div>

@@ -1,9 +1,48 @@
-title: Codezen's Vlog
-description: Stories, builds and videos from Codezen Regmi — entrepreneur from Kathmandu.
-author: Codezen Regmi
+title: Codezen Regmi's Vlog
+tagline: Notes from an AI entrepreneur in Kathmandu
+description: >-
+  The vlog and journal of Codezen Regmi (Pranjal Regmi), an AI entrepreneur from
+  Kathmandu, Nepal and founder of Creovel. Stories about building products,
+  creator collabs and startups.
 url: https://codezenblog.github.io
 baseurl: ""
 lang: en
+locale: en_US
+
+author:
+  name: Codezen Regmi
+  url: https://codezenblog.github.io/about/
+
+# Default share image + logo used by search engines and social previews
+image: /assets/images/og-image.jpg
+logo: /apple-touch-icon.png
+
+# Feeds the Person schema (sameAs) so Google can link these profiles to you
+social:
+  type: Person
+  name: Codezen Regmi
+  links:
+    - https://codezenregmi.github.io/
+    - https://www.instagram.com/codezenregmi/
+    - https://www.linkedin.com/in/pranjal-regmi-5b6394311/
+    - https://github.com/CODEZENREGMI
+
+# Shown in the "Reach out" section on every post and the About page
+contact:
+  - label: Instagram
+    handle: "@codezenregmi"
+    url: https://www.instagram.com/codezenregmi/
+  - label: LinkedIn
+    handle: Pranjal Regmi
+    url: https://www.linkedin.com/in/pranjal-regmi-5b6394311/
+  - label: GitHub
+    handle: CODEZENREGMI
+    url: https://github.com/CODEZENREGMI
+  - label: Creovel
+    handle: creovel.com
+    url: https://creovel.com
+
+portfolio: https://codezenregmi.github.io/
 
 permalink: /:year/:month/:title/
 timezone: Asia/Kathmandu
@@ -12,10 +51,19 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
-social:
-  portfolio: https://codezenregmi.github.io/
-  github: https://github.com/CODEZENREGMI
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-image.jpg
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Codezen Regmi
 
 exclude:
   - README.md

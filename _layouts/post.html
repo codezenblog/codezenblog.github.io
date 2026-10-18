@@ -4,9 +4,13 @@ layout: default
 <article class="post wrap">
   <header class="post-head">
     <a class="back u-link" href="{{ '/' | relative_url }}">← All posts</a>
-    <p class="label">{{ page.date | date: '%B %-d, %Y' }}{% if page.tags.size > 0 %} · {{ page.tags | join: ', ' }}{% endif %}</p>
+    <p class="label"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>{% if page.tags.size > 0 %} · {{ page.tags | join: ', ' }}{% endif %}</p>
     <h1>{{ page.title }}</h1>
     {% if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+    <a class="byline" href="{{ '/about/' | relative_url }}" rel="author">
+      <img src="{{ '/assets/images/portrait.webp' | relative_url }}" alt="" width="40" height="40">
+      <span>By {{ site.author.name }}<span class="muted"> · Founder of Creovel</span></span>
+    </a>
   </header>
 
   {% include media.html item=page %}
@@ -15,7 +19,9 @@ layout: default
     {{ content }}
   </div>
 
-  <nav class="post-nav">
+  {% include reach-out.html %}
+
+  <nav class="post-nav" aria-label="More posts">
     {% if page.previous %}
       <a href="{{ page.previous.url | relative_url }}"><span class="muted">Older</span>{{ page.previous.title }}</a>
     {% else %}<span></span>{% endif %}
