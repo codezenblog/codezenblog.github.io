@@ -1,0 +1,16 @@
+{% assign item = include.item %}
+{% if item.youtube %}
+  <div class="media">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ item.youtube }}" title="{{ item.title | escape }}" loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+{% elsif item.video %}
+  <div class="media">
+    <video src="{{ item.video | relative_url }}" controls preload="metadata"{% if item.image %} poster="{{ item.image | relative_url }}"{% endif %}></video>
+  </div>
+{% elsif item.image %}
+  <div class="media media--image">
+    <img src="{{ item.image | relative_url }}" alt="{{ item.title | escape }}">
+  </div>
+{% endif %}

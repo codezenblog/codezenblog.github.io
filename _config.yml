@@ -1,0 +1,22 @@
+title: Codezen's Vlog
+description: Stories, builds and videos from Codezen Regmi — entrepreneur from Kathmandu.
+author: Codezen Regmi
+url: https://codezenregmi.github.io
+baseurl: /blog
+lang: en
+
+permalink: /:year/:month/:title/
+timezone: Asia/Kathmandu
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+social:
+  portfolio: https://codezenregmi.github.io/
+  github: https://github.com/CODEZENREGMI
+
+exclude:
+  - README.md
+  - .gitignore

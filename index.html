@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<section class="hero wrap">
+  <p class="label">Vlog &amp; journal</p>
+  <h1>Notes from building<br>things in Kathmandu.</h1>
+  <p class="lede">{{ site.description }}</p>
+</section>
+
+<section class="list wrap">
+  {% if site.posts.size == 0 %}
+    <p class="muted">No posts yet. Check back soon.</p>
+  {% endif %}
+  {% for post in site.posts %}
+    <a class="row" href="{{ post.url | relative_url }}">
+      <span class="row-date muted">{{ post.date | date: '%b %-d, %Y' }}</span>
+      <span class="row-main">
+        <span class="row-title">{{ post.title }}{% if post.youtube or post.video %}<span class="tag">Video</span>{% endif %}</span>
+        {% if post.description %}<span class="row-desc muted">{{ post.description }}</span>{% endif %}
+      </span>
+      <span class="row-arrow" aria-hidden="true">→</span>
+    </a>
+  {% endfor %}
+</section>
