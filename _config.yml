@@ -63,7 +63,6 @@ defaults:
       type: posts
     values:
       layout: post
-      author: Codezen Regmi
 
 exclude:
   - README.md
