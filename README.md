@@ -1,6 +1,6 @@
 # Codezen's Vlog
 
-Live at **https://codezenregmi.github.io/blog/**
+Live at **https://codezenblog.github.io/**
 
 Anyone can read it. Only people with write access to this repo can post, so right now that's just you.
 

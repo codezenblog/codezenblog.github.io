@@ -1,8 +1,8 @@
 title: Codezen's Vlog
 description: Stories, builds and videos from Codezen Regmi — entrepreneur from Kathmandu.
 author: Codezen Regmi
-url: https://codezenregmi.github.io
-baseurl: /blog
+url: https://codezenblog.github.io
+baseurl: ""
 lang: en
 
 permalink: /:year/:month/:title/
