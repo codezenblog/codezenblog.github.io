@@ -44,6 +44,10 @@ contact:
 
 portfolio: https://codezenregmi.github.io/
 
+# Search Console ownership check (rendered by jekyll-seo-tag)
+webmaster_verifications:
+  google: deBZK3nPn--pJOnHE2LFJ-e0Msh7HfzqCbiTd2XwEvo
+
 permalink: /:year/:month/:title/
 timezone: Asia/Kathmandu
 markdown: kramdown
